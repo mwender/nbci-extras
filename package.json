@@ -1,17 +1,31 @@
-
 {
   "name": "nbci-extras",
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "author": "Michael Wender",
-  "scripts" : {
-    "start" : "grunt default" ,
-    "readme" : "grunt readme",
-    "i18n" : "grunt i18n"
+  "scripts": {
+    "start": "grunt default",
+    "readme": "grunt readme",
+    "i18n": "grunt i18n",
+    "build-task:scss-compile": "node-sass-chokidar --source-map true lib/scss/ -o lib/css",
+    "build-task:autoprefixer": "postcss lib/css/*.css --use autoprefixer -d lib/css",
+    "development:browsersync": "browser-sync start --proxy 'https://bringbackbobwhites.local' --files 'lib/css/*.css' 'lib/html/*.*' 'lib/fns/*.*' 'lib/js/*.js'",
+    "development:build": "npm-run-all -p build-task:*",
+    "development:watch": "chokidar 'lib/scss/**/*.scss' -c 'npm run development:build'",
+    "production:scss-compile": "node-sass-chokidar lib/scss/ -o lib/dist --output-style compressed ",
+    "production:autoprefixer": "postcss lib/dist/*.css --no-map --use autoprefixer -d lib/dist",
+    "dev": "npm-run-all -p development:*",
+    "prod": "npm-run-all -p production:*",
+    "devbuild": "npm-run-all -p build-task:*"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-wp-i18n": "~0.5.0",
-    "grunt-wp-readme-to-markdown": "~1.0.0"
+    "autoprefixer": "^9.7.4",
+    "chokidar-cli": "^2.1.0",
+    "grunt": "^1.1.0",
+    "grunt-wp-i18n": "^1.0.3",
+    "grunt-wp-readme-to-markdown": "~2.0.1",
+    "node-sass-chokidar": "^1.4.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
   }
 }
