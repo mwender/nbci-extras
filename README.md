@@ -4,7 +4,7 @@
 **Requires at least:** 4.5  
 **Tested up to:** 5.5.1  
 **Requires PHP:** 7.1  
-**Stable tag:** 1.1.0  
+**Stable tag:** 1.1.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -15,6 +15,9 @@ Site modifications for the National Bobwhites Conservation Initiative website.
 Whenever we find something that Elementor/Elementor Pro, WordPress, or a plugin does not handle, we add the code to this plugin.
 
 ## Changelog ##
+
+### 1.1.1 ###
+* Adding "scroll to top" behavior after page change for DataTables.
 
 ### 1.1.0 ###
 * Adding `[cpttable /]` shortcode for displaying CPTs in a DataTables table.
