@@ -1,22 +1,29 @@
 <?php
 /**
  * Plugin Name:     NBCI Extras
- * Plugin URI:      PLUGIN SITE HERE
+ * Plugin URI:      https://github.com/mwender/nbci-extras
  * Description:     Site modifications for the NBCI Elementor-powered website.
  * Author:          Michael Wender
  * Author URI:      https://mwender.com
  * Text Domain:     nbci-extras
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  *
  * @package         Nbci_Extras
  */
 
 // Define some helpful constants
+$css_dir = ( stristr( site_url(), '.local' ) || SCRIPT_DEBUG )? 'css' : 'dist' ;
+define( 'NBCI_CSS_DIR', $css_dir );
+define( 'NBCI_DEV_ENV', stristr( site_url(), '.local' ) );
 define( 'NBCI_DIR', plugin_dir_path( __FILE__ ) );
 define( 'NBCI_URL', plugin_dir_url( __FILE__ ) );
 
+// Include files
+require_once( 'lib/fns/enqueues.php' );
+require_once( 'lib/fns/shortcodes.php' );
 require_once( 'lib/fns/site-container.php' );
+require_once( 'lib/fns/utilities.php' );
 
 /**
  * Enhanced logging.
