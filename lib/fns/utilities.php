@@ -7,16 +7,16 @@ function build_table( $array, $id = 'table' ){
   $html = '<table class="table" id="' . $id . '">';
   // header row
   $html .= '<thead><tr>';
-  foreach($array[0] as $key=>$value){
-          $html .= '<th>' . htmlspecialchars($key) . '</th>';
-      }
+  foreach( $array[0] as $key => $value ){
+    $html .= '<th>' . htmlspecialchars( $key ) . '</th>';
+  }
   $html .= '</tr></thead>';
 
   // data rows
   $html.= '<tbody>';
-  foreach( $array as $key=>$value){
+  foreach( $array as $key => $value ){
       $html .= '<tr>';
-      foreach($value as $key2=>$value2){
+      foreach( $value as $key2 => $value2 ){
           $html .= '<td>' . $value2 . '</td>';
       }
       $html .= '</tr>';

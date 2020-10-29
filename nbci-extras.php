@@ -7,7 +7,7 @@
  * Author URI:      https://mwender.com
  * Text Domain:     nbci-extras
  * Domain Path:     /languages
- * Version:         1.1.1
+ * Version:         1.2.0
  *
  * @package         Nbci_Extras
  */
