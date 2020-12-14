@@ -17,7 +17,7 @@ function build_table( $array, $id = 'table' ){
   foreach( $array as $key => $value ){
       $html .= '<tr>';
       foreach( $value as $key2 => $value2 ){
-          $html .= '<td>' . $value2 . '</td>';
+        $html.= ( stristr( $value2, '<img' ) )? '<td class="img-cell"><div>' . $value2 . '</div></td>' : '<td>' . $value2 . '</td>' ;
       }
       $html .= '</tr>';
   }
