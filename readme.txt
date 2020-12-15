@@ -4,7 +4,7 @@ Tags: elementor
 Requires at least: 4.5
 Tested up to: 5.6.0
 Requires PHP: 7.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,9 @@ Site modifications for the National Bobwhites Conservation Initiative website.
 Whenever we find something that Elementor/Elementor Pro, WordPress, or a plugin does not handle, we add the code to this plugin.
 
 == Changelog ==
+
+= 1.2.2 =
+* Removing background-color and padding from image cells in DataTables.
 
 = 1.2.1 =
 * Centering images in DataTable cells.
